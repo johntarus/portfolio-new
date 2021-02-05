@@ -1,0 +1,24 @@
+.line{
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #ec4646;
+    margin: auto;
+
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon h3 {
+    display: inline-block;
+  }
+  
+  .banner-start i {
+    padding: 0 6px;
+  }
+  
+  .banner-middle {
+    flex: 1;
+  }
