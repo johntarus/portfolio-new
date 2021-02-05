@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 .line{
     display: block;
     width: 80px;
