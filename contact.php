@@ -1,11 +1,16 @@
 <?php
-    $ToEmail = 'tarusjohn96@gmail.com'; 
-    $EmailSubject = 'BGM Contact Form'; 
-    $mailheader = "From: ".$_POST["email"]."\r\n"; 
-    $mailheader .= "Reply-To: ".$_POST["email"]."\r\n"; 
-    $mailheader .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-    $MESSAGE_BODY = "Name: ".$_POST["name"].""; 
-    $MESSAGE_BODY .= "Email: ".$_POST["email"].""; 
-    $MESSAGE_BODY .= "Comment: ".nl2br($_POST["message"]).""; 
-    mail($ToEmail, $EmailSubject, $MESSAGE_BODY, $mailheader) or die ("Failure");
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $subject = $_POST['subject'];
+    $mailFrom = $_POST['mail'];
+    $message = $_POST['message'];
+    
+    
+    $mailTo = "tarusjohn96@gmail.com";
+    $headers = "From: ".$mailFrom;
+    $txt = "You have received an e-mail from ".$name.".\n\n".$message;
+    
+    mail($mailTo, $subject, $txt, $headers);
+    header("Location: index.php?mailsend");
+    }
 ?>
